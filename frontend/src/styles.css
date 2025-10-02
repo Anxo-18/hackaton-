@@ -1,0 +1,75 @@
+/* Blogeamos Carros - Final Theme (white background, Montserrat) */
+:root{
+  --bg:#ffffff;
+  --card:#ffffff;
+  --muted:#6b6b6b;
+  --accent:#c62828;
+  --accent-dark:#b71c1c;
+  --glass: rgba(0,0,0,0.04);
+  --shadow: 0 6px 20px rgba(50,50,93,0.08);
+}
+*{box-sizing:border-box}
+body { font-family: 'Montserrat', Arial, Helvetica, sans-serif; margin:0; padding:0; background:var(--bg); color:#222; -webkit-font-smoothing:antialiased; }
+.topnav { display:flex; justify-content:space-between; align-items:center; padding:14px 28px; background:var(--bg); color:#111; border-bottom:1px solid #eee; position:sticky; top:0; z-index:40}
+.topnav .brand { font-weight:700; font-size:20px; letter-spacing:0.6px; color:var(--accent); cursor:default; }
+.topnav .links a { color:#333; margin-left:16px; text-decoration:none; font-weight:500; }
+.topnav .links a:hover { color:var(--accent-dark); }
+
+.container { padding:36px; min-height:70vh; max-width:1200px; margin:0 auto; }
+
+/* Hero / Slider */
+.hero { position:relative; border-radius:12px; overflow:hidden; margin-bottom:28px; background:#000; color:#fff; }
+.hero img { width:100%; height:460px; object-fit:cover; display:block; transition:transform .6s ease; }
+.hero .overlay { position:absolute; left:24px; bottom:28px; color:#c62828; display:flex; justify-content:space-between; align-items:center; width:calc(100% - 48px); }
+.hero h1 { margin:0; font-size:34px; line-height:1.05; text-shadow:0 8px 30px rgba(0,0,0,0.45); }
+.hero p { margin-top:8px; color:rgba(255,255,255,0.9); }
+
+/* arrows */
+.slider-controls { position:absolute; top:50%; right:18px; transform:translateY(-50%); display:flex; gap:8px; }
+.ctrl { background:rgba(255,255,255,0.85); border-radius:8px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:var(--shadow); }
+.ctrl:hover { transform:translateY(-1px); }
+
+/* News */
+.section-title { font-size:20px; margin-bottom:12px; color:#111; }
+.news-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:22px; }
+.news-card { background:var(--card); border-radius:10px; overflow:hidden; box-shadow:var(--shadow); border:1px solid #f0f0f0; }
+.news-card img { width:100%; height:180px; object-fit:cover; display:block; }
+.news-card .body { padding:16px; }
+.news-card h3 { margin:0 0 8px 0; font-size:18px; }
+.news-card p { margin:0; color:var(--muted); font-size:14px; }
+
+/* Gallery */
+.gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:12px; }
+.gallery img { width:100%; height:140px; object-fit:cover; border-radius:8px; transition:transform .35s ease, box-shadow .35s ease; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+.gallery img:hover { transform:scale(1.06); box-shadow:0 12px 36px rgba(0,0,0,0.12); }
+
+/* Questions */
+.questions-list { display:grid; gap:14px; margin-top:12px; }
+.q-card { background:var(--card); border-radius:10px; padding:18px; box-shadow:var(--shadow); border:1px solid #f3f3f3; }
+.q-meta { display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px; margin-bottom:8px; }
+.q-title { margin:0 0 6px 0; font-size:18px; }
+.q-body { margin:0; color:#333; }
+
+/* Login */
+.login-wrap { display:flex; align-items:center; justify-content:center; min-height:60vh; padding:40px 16px; }
+.login-card { width:100%; max-width:420px; background:#fff; padding:28px; border-radius:12px; box-shadow:0 10px 30px rgba(50,50,93,0.08); border:1px solid #eee; }
+.form-group { margin-bottom:12px; }
+.form-group label { display:block; margin-bottom:6px; color:#333; font-weight:600; font-size:14px; }
+input[type="text"], input[type="password"], input[type="email"], textarea { width:100%; padding:10px 12px; border-radius:8px; border:1px solid #ddd; font-size:14px; }
+.btn { background:var(--accent); color:#fff; padding:10px 14px; border-radius:8px; border:none; cursor:pointer; font-weight:700; box-shadow:0 6px 18px rgba(198,40,40,0.18); }
+.btn:hover { background:var(--accent-dark); }
+
+/* Footer */
+.footer { padding:24px; text-align:center; color:var(--muted); border-top:1px solid #f2f2f2; margin-top:36px; }
+
+/* Responsive */
+@media(max-width:1000px){
+  .news-grid{ grid-template-columns:repeat(2,1fr); }
+  .gallery{ grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:600px){
+  .hero img{ height:260px; }
+  .hero .overlay{ left:12px; right:12px; bottom:18px; }
+  .news-grid{ grid-template-columns:1fr; }
+  .gallery{ grid-template-columns:1fr; }
+}
